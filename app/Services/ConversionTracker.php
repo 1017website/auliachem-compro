@@ -1,0 +1,3 @@
+<?php
+namespace App\Services;use Illuminate\Http\Request;use Illuminate\Support\Facades\DB;use Illuminate\Support\Str;
+class ConversionTracker {public function record(Request $request,string $type,array $metadata=[]):void{$visitor=$request->session()->get('analytics_visitor');if(!$visitor){$visitor=(string)Str::uuid();$request->session()->put('analytics_visitor',$visitor);}DB::table('conversion_events')->insert(['type'=>$type,'locale'=>in_array($request->input('locale',$request->query('lang','id')),['id','en','zh'],true)?$request->input('locale',$request->query('lang','id')):'id','visitor_hash'=>hash('sha256',$visitor),'metadata'=>$metadata?json_encode($metadata):null,'occurred_at'=>now()]);}}

@@ -1,0 +1,3 @@
+@extends('cms.layout')
+@section('title','Verifikasi dua faktor')
+@section('content')<main class="login-shell"><div class="login-intro"><span class="eyebrow">KEAMANAN AKUN</span><h1>Satu langkah lagi.</h1><p>Masukkan kode enam digit dari aplikasi authenticator Anda.</p></div><section class="login-card"><h2>Verifikasi kode</h2>@if($errors->any())<div class="alert error">{{ $errors->first() }}</div>@endif<form method="post" action="{{ route('two-factor.verify') }}">@csrf<label for="code">Kode authenticator</label><input id="code" name="code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="one-time-code" autofocus required><button class="primary" type="submit">Verifikasi dan masuk</button></form></section></main>@endsection

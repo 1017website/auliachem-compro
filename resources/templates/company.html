@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auliachem Perkasa — Chemical & Laboratory Solution Concept 04</title>
+<meta name="description" content="Chemical and laboratory focused modern website concept for Auliachem Perkasa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue:#0a5fae;
+  --blue2:#1c7bd6;
+  --cyan:#63c8ef;
+  --navy:#061a2e;
+  --navy2:#0b2c4b;
+  --ink:#17283a;
+  --muted:#69798a;
+  --line:#d8e2ec;
+  --soft:#f3f7fb;
+  --white:#fff;
+  --red:#e64448;
+  --max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,sans-serif;background:#fff;color:var(--ink);line-height:1.6}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+h1,h2,h3,h4{margin:0;font-family:Manrope,sans-serif;color:var(--navy);line-height:1.08}
+h1{font-size:clamp(48px,6.8vw,88px);letter-spacing:-.055em}
+h2{font-size:clamp(34px,4.2vw,56px);letter-spacing:-.04em}
+h3{font-size:23px}
+p{margin:0;color:var(--muted)}
+.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+.section{padding:100px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:700 12px/1 Manrope,sans-serif;letter-spacing:.17em;text-transform:uppercase;color:var(--blue);margin-bottom:18px}
+.eyebrow:before{content:"";width:28px;height:2px;background:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;font:700 14px/1 Manrope,sans-serif;transition:.25s;border:1px solid transparent}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:#074d8e}
+.btn-outline{border-color:#b9c8d7;background:#fff;color:var(--navy)}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+
+
+/* LANGUAGE SWITCHER */
+.lang-switch{display:flex;align-items:center;border:1px solid var(--line);background:rgba(255,255,255,.92);height:42px;padding:3px;gap:2px}
+.lang-switch button{height:34px;min-width:38px;padding:0 9px;border:0;background:transparent;color:#607487;font:700 11px/1 Manrope,sans-serif;cursor:pointer;transition:.2s;letter-spacing:.03em}
+.lang-switch button:hover{color:var(--blue);background:#eef6fc}
+.lang-switch button.active{background:var(--navy);color:#fff}
+@media(max-width:650px){.lang-switch{height:40px}.lang-switch button{height:32px;min-width:34px;padding:0 7px;font-size:10px}}
+
+/* NAV */
+.navbar{position:fixed;z-index:60;left:0;right:0;top:0;padding:16px 0;transition:.25s}
+.navbar.scrolled{background:rgba(255,255,255,.96);box-shadow:0 10px 28px rgba(7,30,52,.09);backdrop-filter:blur(14px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand img{width:208px}
+.menu{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:600;color:#29445f}
+.menu a{padding:8px 0;position:relative}
+.menu a:after{content:"";position:absolute;left:0;bottom:1px;width:0;height:2px;background:var(--blue);transition:.25s}
+.menu a:hover:after{width:100%}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.menu-btn{display:none;width:44px;height:44px;border:1px solid var(--line);background:#fff;font-size:20px}
+
+/* HERO */
+.hero{padding:136px 0 0;background:
+linear-gradient(90deg,rgba(10,95,174,.035) 1px,transparent 1px),
+linear-gradient(rgba(10,95,174,.035) 1px,transparent 1px),
+linear-gradient(180deg,#f8fbfe 0%,#edf5fb 100%);
+background-size:44px 44px,44px 44px,auto;
+overflow:hidden;}
+.hero-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:52px;align-items:center}
+.hero-copy{padding:60px 0 84px;position:relative}
+.hero-copy:before{content:"CHEMICAL • LABORATORY • SOLUTION";position:absolute;top:0;left:0;font:700 10px/1 Manrope;letter-spacing:.25em;color:#93a7ba}
+.hero-copy p{font-size:18px;max-width:620px;margin:28px 0 34px}
+.hero-copy .blue{color:var(--blue)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-notes{display:flex;gap:28px;flex-wrap:wrap;margin-top:38px;padding-top:24px;border-top:1px solid #d3dee8}
+.hero-note b{display:block;font:800 17px/1.2 Manrope;color:var(--navy)}
+.hero-note span{font-size:13px;color:var(--muted)}
+
+.hero-media{min-height:660px;position:relative}
+.hero-photo{position:absolute;inset:0 0 0 34px;background:
+linear-gradient(180deg,rgba(4,20,35,.05),rgba(4,20,35,.28)),
+url('https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1500&q=88') center/cover;}
+.hero-photo:before{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.35)}
+.molecule-card{position:absolute;left:0;bottom:34px;width:245px;background:rgba(255,255,255,.96);box-shadow:0 18px 50px rgba(7,31,53,.17);padding:22px}
+.molecule-card svg{width:110px;height:72px}
+.molecule-card b{display:block;font:800 16px/1.3 Manrope;color:var(--navy);margin-top:10px}
+.molecule-card span{font-size:12px;color:var(--muted)}
+.hero-chip{position:absolute;right:22px;top:22px;background:rgba(6,26,46,.9);color:#fff;padding:16px 18px;max-width:230px}
+.hero-chip small{display:block;color:#80ccff;text-transform:uppercase;letter-spacing:.14em;font-weight:700}
+.hero-chip strong{display:block;font:700 16px/1.35 Manrope;margin-top:6px}
+
+/* SOLUTION STRIP */
+.solution-strip{background:var(--navy);color:#fff}
+.solution-strip .inner{display:grid;grid-template-columns:repeat(4,1fr)}
+.sol{padding:30px 34px;border-right:1px solid rgba(255,255,255,.1);display:flex;gap:18px;align-items:flex-start}
+.sol:last-child{border-right:0}
+.sol .num{width:38px;height:38px;flex:0 0 38px;border:1px solid rgba(255,255,255,.22);display:grid;place-items:center;color:#83c9ff;font:700 12px Manrope}
+.sol b{display:block;font:700 18px/1.2 Manrope}
+.sol span{display:block;color:#9eb0c2;font-size:13px;margin-top:5px}
+
+/* SECTION HEAD */
+.section-head{display:grid;grid-template-columns:.82fr 1.18fr;gap:80px;align-items:end;margin-bottom:46px}
+.section-head p{font-size:17px;max-width:680px;justify-self:end}
+
+/* CORE */
+.core-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.core-card{border:1px solid var(--line);background:#fff;min-height:530px;display:flex;flex-direction:column;transition:.25s}
+.core-card:hover{transform:translateY(-4px);box-shadow:0 18px 46px rgba(7,35,62,.1)}
+.core-img{height:220px;overflow:hidden}
+.core-img img{width:100%;height:100%;object-fit:cover;transition:.35s}
+.core-card:hover img{transform:scale(1.035)}
+.core-body{padding:28px;flex:1;display:flex;flex-direction:column}
+.core-index{font:800 12px Manrope;color:var(--blue);letter-spacing:.14em}
+.core-body h3{margin:16px 0 12px;font-size:23px}
+.core-body p{font-size:15px}
+.core-body a{margin-top:auto;padding-top:24px;color:var(--blue);font-weight:700;font-size:14px}
+
+
+/* INDUSTRIAL SALT */
+.salt-section{background:#fff;position:relative;overflow:hidden}
+.salt-section:before{content:"NaCl";position:absolute;right:-24px;top:18px;font:800 clamp(110px,18vw,260px)/1 Manrope,sans-serif;color:rgba(10,95,174,.035);letter-spacing:-.08em;pointer-events:none}
+.salt-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:0;border:1px solid var(--line);position:relative;z-index:1}
+.salt-visual{min-height:650px;position:relative;background:
+linear-gradient(180deg,rgba(4,20,35,.02),rgba(4,20,35,.22)),
+url('https://s.alicdn.com/%40sc04/kf/Hc3c3fa79ec974ba0b884a1b76da02ac2c/High-Capacity-1-5-10-20TPH-Industrial-High-Purity-Mechanical-Salt-Refinery-Coarse-Salt-Upgrading-Processing-Plant.jpg') center/cover}
+.salt-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,rgba(6,26,46,.14))}
+.salt-visual-card{position:absolute;left:24px;bottom:24px;z-index:2;background:rgba(6,26,46,.92);color:white;padding:22px;max-width:360px}
+.salt-visual-card small{display:block;color:#8ad2ff;text-transform:uppercase;letter-spacing:.14em;font-weight:700;margin-bottom:7px}
+.salt-visual-card b{display:block;font:700 20px/1.3 Manrope,sans-serif}
+.salt-visual-card span{display:block;color:#c2d0dd;font-size:13px;margin-top:7px}
+.salt-copy{padding:56px;background:#f8fbfe}
+.salt-copy>p{font-size:17px;margin-top:20px}
+.salt-specs{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:28px}
+.salt-spec{background:#fff;border:1px solid var(--line);padding:18px}
+.salt-spec b{display:block;font:800 15px/1.25 Manrope,sans-serif;color:var(--navy)}
+.salt-spec span{display:block;font-size:12px;color:var(--muted);margin-top:5px}
+.salt-note{margin-top:18px;padding:15px 17px;border-left:3px solid var(--blue);background:#edf6fd;font-size:12px;color:#587086}
+.salt-apps{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--line);border-top:1px solid var(--line);margin-top:22px}
+.salt-app{padding:17px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.salt-app b{display:block;font:700 13px/1.3 Manrope,sans-serif;color:var(--navy)}
+.salt-app span{font-size:11px;color:var(--muted)}
+.salt-supply{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+.salt-supply-item{padding:16px;background:var(--navy);color:white}
+.salt-supply-item b{display:block;font:700 13px/1.25 Manrope,sans-serif}
+.salt-supply-item span{display:block;font-size:11px;color:#9fb2c5;margin-top:4px}
+
+/* APPLICATIONS */
+.applications{background:var(--soft)}
+.app-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line)}
+.app-copy{padding:56px;background:#fff}
+.app-copy p{font-size:17px;margin-top:20px}
+.app-list{margin-top:30px;border-top:1px solid var(--line)}
+.app-row{display:flex;justify-content:space-between;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.app-row b{font-family:Manrope;color:var(--navy)}
+.app-row span{color:var(--blue);font-weight:700}
+.app-photo{min-height:560px;background:url('https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?auto=format&fit=crop&w=1500&q=86') center/cover;position:relative}
+.app-photo .caption{position:absolute;left:24px;bottom:24px;background:rgba(6,26,46,.9);color:#fff;padding:20px 22px;max-width:360px}
+.app-photo .caption b{display:block;font:700 19px/1.3 Manrope}
+.app-photo .caption span{display:block;font-size:13px;color:#bed0df;margin-top:6px}
+
+/* LAB SOLUTION */
+.lab-panel{display:grid;grid-template-columns:1.02fr .98fr;min-height:680px}
+.lab-photo{background:url('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1500&q=86') center/cover}
+.lab-copy{background:var(--navy);padding:66px;display:flex;flex-direction:column;justify-content:center}
+.lab-copy h2{color:#fff}
+.lab-copy p{color:#a9b8c7;font-size:17px;margin:22px 0 30px}
+.lab-features{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(255,255,255,.12);border-left:1px solid rgba(255,255,255,.12)}
+.lab-feature{padding:20px;border-right:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}
+.lab-feature b{display:block;color:#fff;font:700 14px Manrope}
+.lab-feature span{font-size:12px;color:#91a6bb}
+
+/* HANDLING */
+.handling-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}
+.handling-copy p{font-size:17px;margin-top:20px}
+.handling-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.tag{padding:10px 14px;border:1px solid var(--line);font-size:13px;font-weight:700;color:#40566c;background:#fff}
+.handling-visuals{display:grid;grid-template-columns:1.05fr .95fr;gap:16px}
+.handling-main{min-height:520px;background:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1300&q=86') center/cover}
+.handling-side{display:grid;gap:16px}
+.handling-small{min-height:252px;background-size:cover;background-position:center}
+.handling-small.one{background-image:url('https://www.neilchem.com/assets/website/images/chemical-distribution.jpg')}
+.handling-small.two{background-image:url('https://bacfo.com/Images/facility-gallery8.jpg')}
+
+/* QUALITY */
+.quality{background:linear-gradient(180deg,#f8fbfe,#eef5fb)}
+.quality-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:60px;align-items:center}
+.quality-copy p{font-size:17px;margin-top:20px}
+.docs{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px}
+.doc{background:#fff;border:1px solid var(--line);padding:22px}
+.doc b{display:block;font:800 22px/1 Manrope;color:var(--blue);margin-bottom:7px}
+.doc span{font-size:13px;color:var(--muted)}
+.quality-photo{min-height:580px;background:url('https://images.unsplash.com/photo-1532634993-15f421e42ec0?auto=format&fit=crop&w=1400&q=86') center/cover;position:relative}
+.quality-overlay{position:absolute;left:24px;right:24px;bottom:24px;background:rgba(255,255,255,.95);padding:22px}
+.quality-overlay b{display:block;font:700 18px/1.3 Manrope;color:var(--navy)}
+.quality-overlay span{font-size:13px;color:var(--muted)}
+
+/* CTA */
+.cta{padding:92px 0}
+.cta-box{background:linear-gradient(120deg,var(--blue) 0%,#0c4b83 55%,var(--navy) 100%);padding:62px;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.cta-box h2{color:#fff;max-width:760px}
+.cta-box p{color:#c1d1df;margin-top:16px;max-width:650px}
+.cta-box .btn{background:#fff;color:var(--navy);white-space:nowrap}
+
+/* FOOTER */
+footer{background:#051524;color:#fff;padding:62px 0 28px}
+.footer-grid{display:grid;grid-template-columns:1.4fr .7fr .8fr 1fr;gap:44px}
+.footer-logo{display:inline-block;background:#fff;padding:10px 14px}
+.footer-logo img{width:190px}
+footer h4{color:#fff;font-size:15px;margin-bottom:15px}
+footer p,footer a{font-size:14px;color:#8fa2b4}
+footer a{display:block;margin:8px 0}
+.copy{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.1);margin-top:42px;padding-top:20px;color:#6f8498;font-size:13px}
+
+.reveal{opacity:0;transform:translateY(18px);transition:.7s ease}
+.reveal.show{opacity:1;transform:none}
+
+@media(max-width:1000px){
+  .menu{display:none}
+  .menu.mobile{display:flex;position:absolute;left:20px;right:20px;top:76px;background:#fff;border:1px solid var(--line);box-shadow:0 18px 45px rgba(7,30,52,.12);padding:22px;flex-direction:column;align-items:flex-start}
+  .menu-btn{display:block}
+  .nav-actions .btn-outline{display:none}
+  .hero-grid,.section-head,.handling-grid,.quality-grid{grid-template-columns:1fr}
+  .hero-media{min-height:580px}
+  .solution-strip .inner{grid-template-columns:1fr}
+  .sol{border-right:0;border-bottom:1px solid rgba(255,255,255,.1)}
+  .core-grid{grid-template-columns:1fr 1fr}
+  .app-grid,.lab-panel,.salt-grid{grid-template-columns:1fr}
+  .app-photo,.lab-photo,.salt-visual{min-height:500px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:650px){
+  .container{width:min(var(--max),calc(100% - 28px))}
+  .brand img{width:170px}
+  .nav-actions .btn-primary{display:none}
+  .hero{padding-top:118px}
+  h1{font-size:49px}
+  .hero-copy{padding:42px 0 58px}
+  .hero-photo{left:14px}
+  .molecule-card{width:210px}
+  .core-grid,.docs,.lab-features,.handling-visuals,.footer-grid,.salt-specs,.salt-apps,.salt-supply{grid-template-columns:1fr}
+  .app-copy,.lab-copy{padding:38px 26px}
+  .handling-main{min-height:360px}
+  .cta-box{padding:40px 26px;flex-direction:column;align-items:flex-start}
+  .section{padding:74px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <div class="container nav">
+    <a href="#home" class="brand"><img src="data:image/webp;base64,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" alt="Auliachem Perkasa"></a>
+    <nav class="menu" id="menu">
+      <a href="#home">Home</a>
+      <a href="#core">Products</a>
+      <a href="#industrial-salt">Industrial Salt</a>
+      <a href="#applications">Industries</a>
+      <a href="#labsolution">Lab Solution</a>
+      <a href="#quality">Quality</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="lang-switch" aria-label="Language selector">
+      <button type="button" data-lang="id" class="active">ID</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="zh">中文</button>
+    </div>
+    <div class="nav-actions">
+      <a href="#core" class="btn btn-outline">View Products</a>
+      <a href="#contact" class="btn btn-primary">Request Quote</a>
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">Chemical & Laboratory Solution</span>
+      <h1>Materials for industry.<br><span class="blue">Solutions for laboratories.</span></h1>
+      <p>Auliachem Perkasa supports industrial and laboratory operations through reliable chemical supply, industrial salt, laboratory chemicals, laboratory facilities, technical documentation, and professional handling.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#core">Explore Our Solutions →</a>
+        <a class="btn btn-outline" href="#contact">Talk to Technical Team</a>
+      </div>
+      <div class="hero-notes">
+        <div class="hero-note"><b>Since 2014</b><span>Chemical & lab business</span></div>
+        <div class="hero-note"><b>4 Core Solutions</b><span>Material · Salt · Chemical · Furniture</span></div>
+        <div class="hero-note"><b>B2B Focused</b><span>Industry & research</span></div>
+      </div>
+    </div>
+
+    <div class="hero-media reveal">
+      <div class="hero-photo"></div>
+      <div class="hero-chip">
+        <small>Scientific Business</small>
+        <strong>Professional supply for chemical, industrial, and laboratory applications.</strong>
+      </div>
+      <div class="molecule-card">
+        <svg viewBox="0 0 140 90" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="#0a5fae" stroke-width="2.2">
+            <line x1="20" y1="46" x2="50" y2="25"/>
+            <line x1="50" y1="25" x2="82" y2="43"/>
+            <line x1="82" y1="43" x2="112" y2="22"/>
+            <line x1="82" y1="43" x2="104" y2="72"/>
+          </g>
+          <circle cx="20" cy="46" r="8" fill="#e64448"/>
+          <circle cx="50" cy="25" r="8" fill="#0a5fae"/>
+          <circle cx="82" cy="43" r="8" fill="#63c8ef"/>
+          <circle cx="112" cy="22" r="8" fill="#0a5fae"/>
+          <circle cx="104" cy="72" r="8" fill="#e64448"/>
+        </svg>
+        <b>Chemical & Laboratory Expertise</b>
+        <span>Reliable products, technical documentation, and professional support.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="solution-strip">
+  <div class="container inner">
+    <div class="sol"><div class="num">01</div><div><b>Chemical Raw Material</b><span>For manufacturing and formulation</span></div></div>
+    <div class="sol"><div class="num">02</div><div><b>Industrial Salt</b><span>NaCl solutions for industrial applications</span></div></div>
+    <div class="sol"><div class="num">03</div><div><b>Laboratory Chemical</b><span>Reagents, analysis & reference materials</span></div></div>
+    <div class="sol"><div class="num">04</div><div><b>Laboratory Solution</b><span>Furniture, safety & workspace systems</span></div></div>
+  </div>
+</section>
+
+<section class="section" id="core">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Core Business</span>
+        <h2>Integrated Solutions for Chemical, Industrial Salt & Laboratory Needs.</h2>
+      </div>
+      <p>Auliachem Perkasa provides chemical raw materials, industrial salt, laboratory chemicals, and laboratory solutions to support diverse industrial requirements with reliable supply, technical documentation, and professional service.</p>
+    </div>
+
+    <div class="core-grid">
+      <article class="core-card reveal">
+        <div class="core-img"><img src="https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?auto=format&fit=crop&w=1100&q=86" alt="Chemical raw material"></div>
+        <div class="core-body">
+          <span class="core-index">01 / CHEMICAL RAW MATERIAL</span>
+          <h3>Raw Materials for Multiple Industries</h3>
+          <p>Materials for cosmetics, food, feed, pharmaceutical, water treatment, and general manufacturing applications.</p>
+          <a href="#applications">Explore Applications →</a>
+        </div>
+      </article>
+
+      <article class="core-card reveal">
+        <div class="core-img"><img src="https://image.made-in-china.com/365f3j00BwAVakvMinoC/Sal-Industrial-en-Grandes-Sacos-99-7-Sodium-Chloride-1200kg.webp" alt="Industrial salt in bulk bags"></div>
+        <div class="core-body">
+          <span class="core-index">02 / INDUSTRIAL SALT</span>
+          <h3>Industrial Salt for Process & Production</h3>
+          <p>Sodium chloride solutions for water treatment, textile, chemical processing, food-related applications, and general industrial requirements—according to product grade and specification.</p>
+          <a href="#industrial-salt">Explore Industrial Salt →</a>
+        </div>
+      </article>
+
+      <article class="core-card reveal">
+        <div class="core-img"><img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1100&q=86" alt="Laboratory chemical"></div>
+        <div class="core-body">
+          <span class="core-index">03 / LABORATORY CHEMICAL</span>
+          <h3>Reagents & Analytical Materials</h3>
+          <p>Laboratory chemicals for testing, research, quality control, education, and industrial laboratory workflows.</p>
+          <a href="#quality">Explore Laboratory Chemical →</a>
+        </div>
+      </article>
+
+      <article class="core-card reveal">
+        <div class="core-img"><img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1100&q=86" alt="Laboratory furniture and solution"></div>
+        <div class="core-body">
+          <span class="core-index">04 / LABORATORY SOLUTION</span>
+          <h3>Lab Furniture & Safety Systems</h3>
+          <p>Fume hoods, workbenches, storage, racks, emergency equipment, and laboratory support solutions.</p>
+          <a href="#labsolution">Explore Lab Solution →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<section class="section salt-section" id="industrial-salt">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Industrial Salt Division</span>
+        <h2>Industrial salt supply built around grade, application, and reliable handling.</h2>
+      </div>
+      <p>Auliachem supplies industrial salt for multiple B2B applications, supported by clear product specifications, packaging options, technical documentation, and reliable supply planning.</p>
+    </div>
+
+    <div class="salt-grid reveal">
+      <div class="salt-visual">
+        <div class="salt-visual-card">
+          <small>Sodium Chloride · NaCl</small>
+          <b>Industrial Salt for Manufacturing & Process Applications</b>
+          <span>From water treatment and textile processing to chemical manufacturing and other industrial workflows.</span>
+        </div>
+      </div>
+
+      <div class="salt-copy">
+        <span class="eyebrow">Specification-led Supply</span>
+        <h2 style="font-size:clamp(30px,3.4vw,46px)">Choose by application, specification, and supply requirement.</h2>
+        <p>Key technical parameters are presented transparently, with final values referring to the relevant product specification and Certificate of Analysis (CoA).</p>
+
+        <div class="salt-specs">
+          <div class="salt-spec"><b>NaCl / Purity</b><span>According to product specification & CoA</span></div>
+          <div class="salt-spec"><b>Moisture</b><span>According to product specification & CoA</span></div>
+          <div class="salt-spec"><b>Ca / Mg / Insolubles</b><span>Technical parameters available by product</span></div>
+          <div class="salt-spec"><b>Particle Size</b><span>Fine / coarse / application-specific options</span></div>
+        </div>
+
+        <div class="salt-apps">
+          <div class="salt-app"><b>Water Treatment</b><span>Softening & process needs</span></div>
+          <div class="salt-app"><b>Textile & Dyeing</b><span>Industrial processing</span></div>
+          <div class="salt-app"><b>Chemical Manufacturing</b><span>Process raw material</span></div>
+          <div class="salt-app"><b>Food / Pharma Inquiry</b><span>Subject to grade & certification</span></div>
+        </div>
+
+        <div class="salt-supply">
+          <div class="salt-supply-item"><b>Bag Packaging</b><span>According to available product</span></div>
+          <div class="salt-supply-item"><b>Jumbo / Bulk</b><span>For large-volume requirements</span></div>
+          <div class="salt-supply-item"><b>CoA / MSDS</b><span>Technical documentation support</span></div>
+          <div class="salt-supply-item"><b>Recurring Supply</b><span>For B2B procurement planning</span></div>
+        </div>
+
+        <div class="salt-note">Product grade, purity, packaging, certification, and application suitability should follow Auliachem's actual supplied product and supporting documents.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section applications" id="applications">
+  <div class="container">
+    <div class="app-grid reveal">
+      <div class="app-copy">
+        <span class="eyebrow">Chemical Applications</span>
+        <h2>From formulation to industrial processing.</h2>
+        <p>Our product portfolio supports a wide range of industrial applications, helping customers identify suitable materials based on their operational requirements.</p>
+        <div class="app-list">
+          <div class="app-row"><b>Cosmetics & Personal Care</b><span>01</span></div>
+          <div class="app-row"><b>Food & Beverage</b><span>02</span></div>
+          <div class="app-row"><b>Pharmaceutical</b><span>03</span></div>
+          <div class="app-row"><b>Water Treatment</b><span>04</span></div>
+          <div class="app-row"><b>Feed & Agriculture</b><span>05</span></div>
+          <div class="app-row"><b>Textile & Dyeing</b><span>06</span></div>
+          <div class="app-row"><b>Chemical Manufacturing</b><span>07</span></div>
+          <div class="app-row"><b>General Industry</b><span>08</span></div>
+        </div>
+      </div>
+      <div class="app-photo">
+        <div class="caption"><b>Industrial-grade chemical materials</b><span>Relevant imagery for formulation, handling, and production environments.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="labsolution">
+  <div class="container">
+    <div class="lab-panel reveal">
+      <div class="lab-photo"></div>
+      <div class="lab-copy">
+        <span class="eyebrow" style="color:#83ccff">Laboratory Solution</span>
+        <h2>Laboratory infrastructure should look like laboratory infrastructure.</h2>
+        <p>Auliachem provides laboratory furniture, safety equipment, and workspace solutions designed to support efficient, safe, and functional laboratory environments.</p>
+        <div class="lab-features">
+          <div class="lab-feature"><b>Fume Hood</b><span>Safe handling workspace</span></div>
+          <div class="lab-feature"><b>Workbench</b><span>Functional lab station</span></div>
+          <div class="lab-feature"><b>Storage Cabinet</b><span>Chemical & equipment storage</span></div>
+          <div class="lab-feature"><b>Emergency Shower</b><span>Laboratory safety support</span></div>
+          <div class="lab-feature"><b>Eye Washer</b><span>Emergency equipment</span></div>
+          <div class="lab-feature"><b>Custom Lab Setup</b><span>Workspace configuration</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="handling">
+  <div class="container handling-grid">
+    <div class="handling-copy reveal">
+      <span class="eyebrow">Facility & Handling</span>
+      <h2>Reliable Facility, Handling & Distribution Support.</h2>
+      <p>Our operational support includes warehousing, raw-material handling, packaging, logistics, and quality-control processes to support consistent B2B supply.</p>
+      <div class="handling-tags">
+        <span class="tag">Warehouse</span>
+        <span class="tag">Raw Material Handling</span>
+        <span class="tag">Packaging</span>
+        <span class="tag">Logistics</span>
+        <span class="tag">Quality Control</span>
+      </div>
+    </div>
+
+    <div class="handling-visuals reveal">
+      <div class="handling-main"></div>
+      <div class="handling-side">
+        <div class="handling-small one"></div>
+        <div class="handling-small two"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section quality" id="quality">
+  <div class="container quality-grid">
+    <div class="quality-copy reveal">
+      <span class="eyebrow">Quality & Documentation</span>
+      <h2>Technical confidence for B2B purchasing.</h2>
+      <p>Complete supporting documentation helps customers evaluate product suitability, quality, safety, and compliance with greater confidence.</p>
+      <div class="docs">
+        <div class="doc"><b>CoA</b><span>Certificate of Analysis</span></div>
+        <div class="doc"><b>TDS</b><span>Technical Data Sheet</span></div>
+        <div class="doc"><b>MSDS</b><span>Material Safety Data Sheet</span></div>
+        <div class="doc"><b>Halal</b><span>Supporting certification where applicable</span></div>
+      </div>
+    </div>
+
+    <div class="quality-photo reveal">
+      <div class="quality-overlay"><b>Laboratory testing & quality support</b><span>Visual emphasis on analysis, testing, documentation, and technical reliability.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="container">
+    <div class="cta-box reveal">
+      <div>
+        <span class="eyebrow" style="color:#8dd2ff">Request Information</span>
+        <h2>Looking for a chemical, industrial salt, reagent, or laboratory solution?</h2>
+        <p>Contact Auliachem for chemical raw materials, industrial salt, laboratory chemicals, technical documents, availability, or laboratory solution requirements.</p>
+      </div>
+      <a class="btn" href="#quote-form">Request a Quote →</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><img src="data:image/webp;base64,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" alt="Auliachem Perkasa"></div>
+        <p style="margin-top:18px;max-width:350px">Chemical raw material, industrial salt, laboratory chemical, and laboratory solution partner for professional industries.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#home">Home</a>
+        <a href="#applications">Industries</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h4>Solutions</h4>
+        <a href="#core">Chemical Raw Material</a>
+        <a href="#industrial-salt">Industrial Salt</a>
+        <a href="#core">Laboratory Chemical</a>
+        <a href="#labsolution">Laboratory Solution</a>
+      </div>
+      <div>
+        <h4>Website Direction</h4>
+        <p>Scientific, technical, industrial, and clearly aligned with chemical & laboratory business.</p>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 Auliachem Perkasa</span>
+      <span>Chemical & Laboratory Focused Concept 04</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('navbar');
+const menu=document.getElementById('menu');
+const btn=document.getElementById('menuBtn');
+
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>20));
+btn.addEventListener('click',()=>menu.classList.toggle('mobile'));
+document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('mobile')));
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    }
+  })
+},{threshold:.12});
+
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+
+<script>
+const TRANSLATIONS = {"Home":{"id":"Beranda","zh":"首页"},"Products":{"id":"Produk","zh":"产品"},"Industries":{"id":"Industri","zh":"行业"},"Lab Solution":{"id":"Solusi Lab","zh":"实验室解决方案"},"Quality":{"id":"Kualitas","zh":"质量"},"Contact":{"id":"Kontak","zh":"联系我们"},"View Products":{"id":"Lihat Produk","zh":"查看产品"},"Request Quote":{"id":"Minta Penawaran","zh":"获取报价"},"Chemical & Laboratory Solution":{"id":"Solusi Kimia & Laboratorium","zh":"化学品与实验室解决方案"},"Materials for industry.":{"id":"Material untuk industri.","zh":"工业所需材料。"},"Solutions for laboratories.":{"id":"Solusi untuk laboratorium.","zh":"实验室整体解决方案。"},"Auliachem Perkasa supports industrial and laboratory operations through reliable chemical supply, industrial salt, laboratory chemicals, laboratory facilities, technical documentation, and professional handling.":{"id":"Auliachem Perkasa mendukung kebutuhan industri dan laboratorium melalui pasokan bahan kimia, garam industri, bahan kimia laboratorium, fasilitas laboratorium, dokumentasi teknis, dan penanganan profesional.","zh":"Auliachem Perkasa 通过稳定的化学品供应、工业盐、实验室化学品、实验室设施、技术文件及专业物料处理，支持工业与实验室运营。"},"Explore Our Solutions →":{"id":"Jelajahi Solusi Kami →","zh":"探索我们的解决方案 →"},"Talk to Technical Team":{"id":"Konsultasi dengan Tim Teknis","zh":"咨询技术团队"},"Since 2014":{"id":"Sejak 2014","zh":"始于 2014 年"},"Chemical & lab business":{"id":"Bisnis kimia & laboratorium","zh":"化学与实验室业务"},"B2B Focused":{"id":"Fokus B2B","zh":"专注 B2B"},"Industry & research":{"id":"Industri & riset","zh":"工业与科研"},"Scientific Business":{"id":"Bisnis Berbasis Sains","zh":"科学型业务"},"Professional supply for chemical, industrial, and laboratory applications.":{"id":"Pasokan profesional untuk kebutuhan chemical, industri, dan laboratorium.","zh":"面向化工、工业及实验室应用的专业供应。"},"Chemical & Laboratory Expertise":{"id":"Keahlian Kimia & Laboratorium","zh":"化学与实验室专业能力"},"Reliable products, technical documentation, and professional support.":{"id":"Produk andal, dokumentasi teknis, dan dukungan profesional.","zh":"可靠产品、技术文件与专业支持。"},"Chemical Raw Material":{"id":"Bahan Baku Kimia","zh":"化工原料"},"For manufacturing and formulation":{"id":"Untuk manufaktur dan formulasi","zh":"用于生产与配方"},"Laboratory Chemical":{"id":"Bahan Kimia Laboratorium","zh":"实验室化学品"},"Reagents, analysis & reference materials":{"id":"Reagen, analisis & bahan referensi","zh":"试剂、分析与标准物质"},"Laboratory Solution":{"id":"Solusi Laboratorium","zh":"实验室解决方案"},"Furniture, safety & workspace systems":{"id":"Furniture, safety & sistem ruang kerja","zh":"家具、安全与工作空间系统"},"Core Business":{"id":"Bisnis Utama","zh":"核心业务"},"Integrated Solutions for Chemical, Industrial Salt & Laboratory Needs.":{"id":"Solusi Terintegrasi untuk Kebutuhan Chemical, Garam Industri & Laboratory.","zh":"面向化工、工业盐与实验室需求的一体化解决方案。"},"Auliachem Perkasa provides chemical raw materials, industrial salt, laboratory chemicals, and laboratory solutions to support diverse industrial requirements with reliable supply, technical documentation, and professional service.":{"id":"Auliachem Perkasa menyediakan bahan baku kimia, garam industri, bahan kimia laboratorium, serta solusi laboratorium untuk mendukung berbagai kebutuhan industri dengan pasokan yang andal, dokumentasi teknis, dan layanan profesional.","zh":"Auliachem Perkasa 提供化工原料、工业盐、实验室化学品及实验室解决方案，以稳定供应、技术文件与专业服务支持多种工业需求。"},"01 / CHEMICAL RAW MATERIAL":{"id":"01 / BAHAN BAKU KIMIA","zh":"01 / 化工原料"},"Raw Materials for Multiple Industries":{"id":"Bahan Baku untuk Berbagai Industri","zh":"面向多行业的化工原料"},"Materials for cosmetics, food, feed, pharmaceutical, water treatment, and general manufacturing applications.":{"id":"Material untuk aplikasi kosmetik, makanan, pakan, farmasi, water treatment, dan manufaktur umum.","zh":"适用于化妆品、食品、饲料、制药、水处理及通用制造等行业。"},"Explore Applications →":{"id":"Lihat Aplikasi →","zh":"查看应用领域 →"},"03 / LABORATORY CHEMICAL":{"id":"03 / BAHAN KIMIA LABORATORIUM","zh":"03 / 实验室化学品"},"Reagents & Analytical Materials":{"id":"Reagen & Material Analitik","zh":"试剂与分析材料"},"Laboratory chemicals for testing, research, quality control, education, and industrial laboratory workflows.":{"id":"Bahan kimia laboratorium untuk pengujian, riset, quality control, pendidikan, dan workflow laboratorium industri.","zh":"用于检测、科研、质量控制、教学及工业实验室流程的化学品。"},"Explore Laboratory Chemical →":{"id":"Lihat Bahan Kimia Laboratorium →","zh":"查看实验室化学品 →"},"04 / LABORATORY SOLUTION":{"id":"04 / SOLUSI LABORATORIUM","zh":"04 / 实验室解决方案"},"Lab Furniture & Safety Systems":{"id":"Furniture Lab & Sistem Keselamatan","zh":"实验室家具与安全系统"},"Fume hoods, workbenches, storage, racks, emergency equipment, and laboratory support solutions.":{"id":"Fume hood, workbench, storage, rack, peralatan emergency, dan berbagai solusi pendukung laboratorium.","zh":"通风柜、实验台、储存柜、货架、应急设备及其他实验室配套解决方案。"},"Explore Lab Solution →":{"id":"Lihat Solusi Lab →","zh":"查看实验室解决方案 →"},"Chemical Applications":{"id":"Aplikasi Kimia","zh":"化学应用"},"From formulation to industrial processing.":{"id":"Dari formulasi hingga proses industri.","zh":"从配方到工业加工。"},"Our product portfolio supports a wide range of industrial applications, helping customers identify suitable materials based on their operational requirements.":{"id":"Portofolio produk kami mendukung berbagai aplikasi industri dan membantu pelanggan memilih material yang sesuai dengan kebutuhan operasionalnya.","zh":"我们的产品组合覆盖多种工业应用，帮助客户根据实际运营需求选择合适材料。"},"Cosmetics & Personal Care":{"id":"Kosmetik & Personal Care","zh":"化妆品与个人护理"},"Food & Beverage":{"id":"Makanan & Minuman","zh":"食品与饮料"},"Pharmaceutical":{"id":"Farmasi","zh":"制药"},"Water Treatment":{"id":"Water Treatment","zh":"水处理"},"Feed & Agriculture":{"id":"Pakan & Pertanian","zh":"饲料与农业"},"General Industry":{"id":"Industri Umum","zh":"通用工业"},"Industrial-grade chemical materials":{"id":"Material kimia untuk kebutuhan industri","zh":"工业级化工材料"},"Relevant imagery for formulation, handling, and production environments.":{"id":"Visual yang relevan untuk formulasi, handling, dan lingkungan produksi.","zh":"适用于配方、物料处理和生产环境的专业视觉呈现。"},"Laboratory infrastructure should look like laboratory infrastructure.":{"id":"Infrastruktur laboratorium harus benar-benar terlihat sebagai laboratorium.","zh":"实验室基础设施，就应呈现真实的实验室专业形象。"},"Auliachem provides laboratory furniture, safety equipment, and workspace solutions designed to support efficient, safe, and functional laboratory environments.":{"id":"Auliachem menyediakan furniture laboratorium, perangkat keselamatan, dan solusi workspace untuk mendukung lingkungan laboratorium yang efisien, aman, dan fungsional.","zh":"Auliachem 提供实验室家具、安全设备及工作空间解决方案，以打造高效、安全且功能完善的实验室环境。"},"Fume Hood":{"id":"Fume Hood","zh":"通风柜"},"Safe handling workspace":{"id":"Area kerja untuk handling yang aman","zh":"安全操作工作区"},"Workbench":{"id":"Workbench","zh":"实验台"},"Functional lab station":{"id":"Stasiun kerja laboratorium fungsional","zh":"功能型实验室工作台"},"Storage Cabinet":{"id":"Storage Cabinet","zh":"储存柜"},"Chemical & equipment storage":{"id":"Penyimpanan chemical & peralatan","zh":"化学品与设备储存"},"Emergency Shower":{"id":"Emergency Shower","zh":"紧急冲淋装置"},"Laboratory safety support":{"id":"Pendukung keselamatan laboratorium","zh":"实验室安全配套"},"Eye Washer":{"id":"Eye Washer","zh":"洗眼器"},"Emergency equipment":{"id":"Peralatan emergency","zh":"应急设备"},"Custom Lab Setup":{"id":"Custom Lab Setup","zh":"定制实验室配置"},"Workspace configuration":{"id":"Konfigurasi ruang kerja","zh":"工作空间配置"},"Facility & Handling":{"id":"Facility & Handling","zh":"设施与物料处理"},"Reliable Facility, Handling & Distribution Support.":{"id":"Dukungan Facility, Handling & Distribusi yang Andal.","zh":"可靠的设施、物料处理与配送支持。"},"Our operational support includes warehousing, raw-material handling, packaging, logistics, and quality-control processes to support consistent B2B supply.":{"id":"Dukungan operasional kami mencakup warehousing, handling bahan baku, packaging, logistics, dan quality control untuk mendukung pasokan B2B yang konsisten.","zh":"我们的运营支持涵盖仓储、原料处理、包装、物流与质量控制，以保障稳定的 B2B 供应。"},"Warehouse":{"id":"Warehouse","zh":"仓储"},"Raw Material Handling":{"id":"Handling Bahan Baku","zh":"原料处理"},"Packaging":{"id":"Packaging","zh":"包装"},"Logistics":{"id":"Logistik","zh":"物流"},"Quality Control":{"id":"Quality Control","zh":"质量控制"},"Quality & Documentation":{"id":"Kualitas & Dokumentasi","zh":"质量与技术文件"},"Technical confidence for B2B purchasing.":{"id":"Keyakinan teknis untuk pembelian B2B.","zh":"为 B2B 采购提供技术信心。"},"Complete supporting documentation helps customers evaluate product suitability, quality, safety, and compliance with greater confidence.":{"id":"Dokumentasi pendukung yang lengkap membantu pelanggan menilai kesesuaian produk, kualitas, keamanan, dan kepatuhan dengan lebih yakin.","zh":"完善的配套文件帮助客户更有把握地评估产品适用性、质量、安全性与合规性。"},"Certificate of Analysis":{"id":"Certificate of Analysis","zh":"分析证书"},"Technical Data Sheet":{"id":"Technical Data Sheet","zh":"技术数据表"},"Material Safety Data Sheet":{"id":"Material Safety Data Sheet","zh":"化学品安全技术说明书"},"Supporting certification where applicable":{"id":"Sertifikasi pendukung bila tersedia","zh":"适用产品的相关支持认证"},"Laboratory testing & quality support":{"id":"Pengujian laboratorium & dukungan kualitas","zh":"实验室检测与质量支持"},"Visual emphasis on analysis, testing, documentation, and technical reliability.":{"id":"Penekanan visual pada analisis, pengujian, dokumentasi, dan keandalan teknis.","zh":"重点呈现分析、检测、技术文件与技术可靠性。"},"Request Information":{"id":"Permintaan Informasi","zh":"获取信息"},"Looking for a chemical, industrial salt, reagent, or laboratory solution?":{"id":"Mencari chemical, garam industri, reagent, atau solusi laboratorium?","zh":"正在寻找化学品、工业盐、试剂或实验室解决方案？"},"Contact Auliachem for chemical raw materials, industrial salt, laboratory chemicals, technical documents, availability, or laboratory solution requirements.":{"id":"Hubungi Auliachem untuk kebutuhan bahan baku kimia, garam industri, bahan kimia laboratorium, dokumen teknis, ketersediaan produk, atau solusi laboratorium.","zh":"联系 Auliachem 获取化工原料、工业盐、实验室化学品、技术文件、产品供应情况或实验室解决方案。"},"Request a Quote →":{"id":"Minta Penawaran →","zh":"获取报价 →"},"Chemical raw material, industrial salt, laboratory chemical, and laboratory solution partner for professional industries.":{"id":"Partner bahan baku kimia, garam industri, bahan kimia laboratorium, dan solusi laboratorium untuk kebutuhan industri profesional.","zh":"为专业工业客户提供化工原料、工业盐、实验室化学品及实验室整体解决方案。"},"Company":{"id":"Perusahaan","zh":"公司"},"Solutions":{"id":"Solusi","zh":"解决方案"},"Website Direction":{"id":"Arah Website","zh":"网站定位"},"Scientific, technical, industrial, and clearly aligned with chemical & laboratory business.":{"id":"Ilmiah, teknis, industrial, dan jelas sesuai dengan bisnis chemical & laboratory.","zh":"科学、技术、工业化，并与化学和实验室业务高度一致。"},"Chemical & Laboratory Focused Concept 04":{"id":"Konsep Chemical & Laboratory 04","zh":"化学与实验室聚焦概念 04"},"Industrial Salt":{"id":"Garam Industri","zh":"工业盐"},"4 Core Solutions":{"id":"4 Solusi Utama","zh":"四大核心解决方案"},"Material · Salt · Chemical · Furniture":{"id":"Material · Garam · Kimia · Furniture Lab","zh":"原料 · 工业盐 · 化学品 · 实验室家具"},"NaCl solutions for industrial applications":{"id":"Solusi NaCl untuk kebutuhan industri","zh":"面向工业应用的 NaCl 解决方案"},"02 / INDUSTRIAL SALT":{"id":"02 / GARAM INDUSTRI","zh":"02 / 工业盐"},"Industrial Salt for Process & Production":{"id":"Garam Industri untuk Proses & Produksi","zh":"用于工业流程与生产的工业盐"},"Sodium chloride solutions for water treatment, textile, chemical processing, food-related applications, and general industrial requirements—according to product grade and specification.":{"id":"Solusi sodium chloride untuk water treatment, tekstil, proses kimia, aplikasi terkait pangan, dan kebutuhan industri umum—sesuai grade dan spesifikasi produk.","zh":"面向水处理、纺织、化工加工、食品相关应用及通用工业需求的氯化钠解决方案，具体以产品等级和规格为准。"},"Explore Industrial Salt →":{"id":"Lihat Garam Industri →","zh":"查看工业盐 →"},"Industrial Salt Division":{"id":"Divisi Garam Industri","zh":"工业盐业务"},"Industrial salt supply built around grade, application, and reliable handling.":{"id":"Pasokan garam industri yang berfokus pada grade, aplikasi, dan handling yang andal.","zh":"围绕产品等级、应用需求与可靠物料处理打造的工业盐供应。"},"Auliachem supplies industrial salt for multiple B2B applications, supported by clear product specifications, packaging options, technical documentation, and reliable supply planning.":{"id":"Auliachem menyediakan garam industri untuk berbagai aplikasi B2B, didukung spesifikasi produk yang jelas, pilihan kemasan, dokumentasi teknis, dan perencanaan pasokan yang andal.","zh":"Auliachem 为多种 B2B 应用提供工业盐，并配套清晰的产品规格、包装选项、技术文件及可靠的供货计划。"},"Sodium Chloride · NaCl":{"id":"Sodium Chloride · NaCl","zh":"氯化钠 · NaCl"},"Industrial Salt for Manufacturing & Process Applications":{"id":"Garam Industri untuk Manufaktur & Proses Industri","zh":"用于制造与工业流程的工业盐"},"From water treatment and textile processing to chemical manufacturing and other industrial workflows.":{"id":"Untuk water treatment, proses tekstil, manufaktur kimia, hingga berbagai workflow industri lainnya.","zh":"适用于水处理、纺织加工、化工制造及其他工业流程。"},"Specification-led Supply":{"id":"Pasokan Berbasis Spesifikasi","zh":"以规格为核心的供应"},"Choose by application, specification, and supply requirement.":{"id":"Pilih berdasarkan aplikasi, spesifikasi, dan kebutuhan pasokan.","zh":"根据应用、规格与供货需求进行选择。"},"Key technical parameters are presented transparently, with final values referring to the relevant product specification and Certificate of Analysis (CoA).":{"id":"Parameter teknis utama disajikan secara transparan, dengan nilai final mengacu pada spesifikasi produk dan Certificate of Analysis (CoA) terkait.","zh":"关键技术参数将透明呈现，最终数值以对应产品规格及分析证书（CoA）为准。"},"NaCl / Purity":{"id":"NaCl / Kemurnian","zh":"NaCl / 纯度"},"According to product specification & CoA":{"id":"Sesuai spesifikasi produk & CoA","zh":"以产品规格与 CoA 为准"},"Moisture":{"id":"Kadar Air","zh":"水分"},"Ca / Mg / Insolubles":{"id":"Ca / Mg / Zat Tak Larut","zh":"Ca / Mg / 不溶物"},"Technical parameters available by product":{"id":"Parameter teknis tersedia sesuai produk","zh":"技术参数按具体产品提供"},"Particle Size":{"id":"Ukuran Partikel","zh":"粒径"},"Fine / coarse / application-specific options":{"id":"Pilihan fine / coarse / sesuai aplikasi","zh":"可选细粒 / 粗粒 / 按应用需求"},"Softening & process needs":{"id":"Softening & kebutuhan proses","zh":"软化与工艺需求"},"Textile & Dyeing":{"id":"Tekstil & Dyeing","zh":"纺织与染色"},"Industrial processing":{"id":"Proses industri","zh":"工业加工"},"Chemical Manufacturing":{"id":"Manufaktur Kimia","zh":"化工制造"},"Process raw material":{"id":"Bahan baku proses","zh":"工艺原料"},"Food / Pharma Inquiry":{"id":"Kebutuhan Food / Pharma","zh":"食品 / 制药需求咨询"},"Subject to grade & certification":{"id":"Sesuai grade & sertifikasi","zh":"以等级与认证为准"},"Bag Packaging":{"id":"Kemasan Karung","zh":"袋装包装"},"According to available product":{"id":"Sesuai produk yang tersedia","zh":"以实际可供产品为准"},"Jumbo / Bulk":{"id":"Jumbo / Bulk","zh":"吨袋 / 散装"},"For large-volume requirements":{"id":"Untuk kebutuhan volume besar","zh":"适用于大批量需求"},"CoA / MSDS":{"id":"CoA / MSDS","zh":"CoA / MSDS"},"Technical documentation support":{"id":"Dukungan dokumentasi teknis","zh":"技术文件支持"},"Recurring Supply":{"id":"Pasokan Rutin","zh":"持续供货"},"For B2B procurement planning":{"id":"Untuk perencanaan procurement B2B","zh":"支持 B2B 采购计划"},"Product grade, purity, packaging, certification, and application suitability should follow Auliachem's actual supplied product and supporting documents.":{"id":"Grade, kemurnian, kemasan, sertifikasi, dan kesesuaian aplikasi harus mengikuti produk aktual yang disuplai Auliachem beserta dokumen pendukungnya.","zh":"产品等级、纯度、包装、认证及应用适用性应以 Auliachem 实际供应产品及其支持文件为准。"}};
+const ORIGINAL = new WeakMap();
+
+function eligibleTextNodes(root=document.body){
+  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(node){
+    const p=node.parentElement;
+    if(!p || ['SCRIPT','STYLE','NOSCRIPT'].includes(p.tagName)) return NodeFilter.FILTER_REJECT;
+    return node.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+  }});
+  const nodes=[]; let n; while(n=walker.nextNode()) nodes.push(n); return nodes;
+}
+
+const TEXT_NODES=eligibleTextNodes();
+TEXT_NODES.forEach(node=>ORIGINAL.set(node,node.nodeValue));
+
+function setLanguage(lang){
+  TEXT_NODES.forEach(node=>{
+    const originalWhole=ORIGINAL.get(node);
+    const key=originalWhole.trim();
+    const lead=originalWhole.match(/^\s*/)[0];
+    const tail=originalWhole.match(/\s*$/)[0];
+    let value=key;
+    if(lang!=='en' && TRANSLATIONS[key] && TRANSLATIONS[key][lang]) value=TRANSLATIONS[key][lang];
+    node.nodeValue=lead+value+tail;
+  });
+  document.documentElement.lang = lang==='zh' ? 'zh-CN' : lang;
+  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+  const titles={id:'Auliachem Perkasa — Kimia, Garam Industri & Solusi Laboratorium',en:'Auliachem Perkasa — Chemical, Industrial Salt & Laboratory Solution',zh:'Auliachem Perkasa — 化学品、工业盐与实验室解决方案'};
+  document.title=titles[lang]||titles.en;
+  localStorage.setItem('auliachem-language',lang);
+}
+
+document.querySelectorAll('.lang-switch button').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
+const saved=localStorage.getItem('auliachem-language');
+setLanguage(['id','en','zh'].includes(saved)?saved:'id');
+</script>
+
+</body>
+</html>
