@@ -22,6 +22,14 @@ class ProductionCheck extends Command
             $databaseStatus = 'gagal: '.$exception->getMessage();
         }
 
+        $publicStorageLink = file_exists(public_path('storage'));
+        $publicStorageRoute = config('filesystems.disks.public.serve') === true;
+        $publicStorageStatus = match (true) {
+            $publicStorageLink => 'symbolic link tersedia',
+            $publicStorageRoute => 'route /storage/{path} aktif',
+            default => 'belum tersedia',
+        };
+
         $checks = [
             ['APP_ENV', app()->environment('production'), app()->environment()],
             ['APP_DEBUG', ! config('app.debug'), config('app.debug') ? 'true' : 'false'],
@@ -32,7 +40,7 @@ class ProductionCheck extends Command
             ['Database', ! str_starts_with($databaseStatus, 'gagal:'), $databaseStatus],
             ['CMS user aktif', $activeCmsUsers > 0, (string) $activeCmsUsers],
             ['storage writable', is_writable(storage_path()), is_writable(storage_path()) ? 'ya' : 'tidak'],
-            ['public/storage', file_exists(public_path('storage')), file_exists(public_path('storage')) ? 'tersedia' : 'belum tersedia'],
+            ['public storage', $publicStorageLink || $publicStorageRoute, $publicStorageStatus],
         ];
         $this->table(['Pemeriksaan', 'Status', 'Nilai'], array_map(fn ($check) => [$check[0], $check[1] ? 'OK' : 'PERLU DIATUR', $check[2]], $checks));
         $failed = collect($checks)->where(fn ($check) => ! $check[1])->count();

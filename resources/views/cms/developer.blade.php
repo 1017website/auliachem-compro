@@ -28,8 +28,7 @@
         </article>
         <article class="tool-row">
             <span class="tool-icon"><x-icon name="link"/></span>
-            <div><h2>Hubungkan storage publik</h2><code>php artisan storage:link</code><p>Membuat tautan public/storage agar gambar yang diunggah dari CMS dapat diakses.</p></div>
-            <form method="post" action="{{ route('cms.developer.run') }}">@csrf<input type="hidden" name="tool" value="storage-link"><button class="secondary" type="submit"><x-icon name="link"/>Jalankan</button></form>
+            <div><h2>Storage publik melalui route</h2><code>GET /storage/{path}</code><p>Gambar unggahan dilayani langsung oleh aplikasi karena fungsi symlink tidak tersedia pada hosting.</p></div>
         </article>
         <article class="tool-row">
             <span class="tool-icon"><x-icon name="database"/></span>

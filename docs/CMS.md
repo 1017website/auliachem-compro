@@ -8,11 +8,12 @@ PHP 8.2 atau lebih baru serta ekstensi DOM, fileinfo, GD, dan PDO MySQL diperluk
 
 ```sh
 php artisan migrate --seed
-php artisan storage:link
 php artisan serve --host=127.0.0.1 --port=8000
 ```
 
 Seeder mengimpor konten dan membuat akun developer awal dari `CMS_BOOTSTRAP_NAME`, `CMS_BOOTSTRAP_EMAIL`, dan `CMS_BOOTSTRAP_PASSWORD`. Password minimal 12 karakter dan tidak memiliki nilai default di source code. Akun yang sudah ada tidak ditimpa. Untuk membuat admin tambahan secara interaktif, gunakan `php artisan cms:admin admin@perusahaan.com`.
+
+Media publik dilayani oleh route `/storage/{path}` langsung dari `storage/app/public`. Ini menggantikan symbolic link pada hosting yang menonaktifkan fungsi PHP `symlink()` dan `exec()`.
 
 Halaman publik: `/`. Login CMS: `/admin/login`. Editor CMS: `/admin`.
 

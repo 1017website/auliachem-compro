@@ -10,7 +10,6 @@ class DeveloperToolsController extends Controller
 {
     private const COMMANDS = [
         'clear-cache' => ['command' => 'optimize:clear', 'arguments' => []],
-        'storage-link' => ['command' => 'storage:link', 'arguments' => []],
         'migrate' => ['command' => 'migrate', 'arguments' => ['--force' => true]],
         'production-check' => ['command' => 'cms:production-check', 'arguments' => []],
         'media-audit' => ['command' => 'cms:media-audit', 'arguments' => []],

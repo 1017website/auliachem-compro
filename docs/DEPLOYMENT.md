@@ -15,12 +15,11 @@ composer install --no-dev --optimize-autoloader
 # Hanya pada deployment pertama, bila APP_KEY masih kosong:
 php artisan key:generate --force
 php artisan migrate --seed --force
-php artisan storage:link
 php artisan optimize
 php artisan cms:production-check
 ```
 
-Jangan jalankan `key:generate` lagi pada deployment berikutnya karena akan mengganti kunci enkripsi aplikasi. Pastikan web server dapat menulis ke `storage` dan `bootstrap/cache`. Aktifkan sertifikat HTTPS sebelum website dibuka untuk publik.
+Jangan jalankan `key:generate` lagi pada deployment berikutnya karena akan mengganti kunci enkripsi aplikasi. File pada `storage/app/public` dilayani melalui route `/storage/{path}`, sehingga deployment ini tidak memerlukan `php artisan storage:link`, fungsi `symlink()`, atau `exec()`. Pastikan web server dapat menulis ke `storage` dan `bootstrap/cache`. Aktifkan sertifikat HTTPS sebelum website dibuka untuk publik.
 
 Seeder aman dijalankan ulang. Konten hanya ditambahkan jika belum ada, sedangkan akun dengan email yang sama tidak akan diubah atau di-reset password-nya. Setelah login pertama, ganti password melalui profil CMS. Nilai `CMS_BOOTSTRAP_PASSWORD` boleh dihapus dari `.env` setelah akun berhasil dibuat; deployment berikutnya akan memakai akun aktif yang sudah ada.
 
